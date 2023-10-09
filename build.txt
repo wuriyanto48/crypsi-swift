@@ -1,0 +1,30 @@
+$ export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
+$ export CFLAGS="-I/opt/homebrew/opt/openssl@1.1/include"
+
+$ xcrun --show-sdk-path
+
+$ sudo ln -s ../../../../../../../../../../../opt/homebrew/Cellar/openssl\@1.1/1.1.1t/include/openssl/ .
+
+wuriyantos-MacBook-Pro:include wuriyanto$ brew link --force openssl@1.1
+Linking /opt/homebrew/Cellar/openssl@1.1/1.1.1t... 
+Error: Could not symlink bin/c_rehash
+Target /opt/homebrew/bin/c_rehash
+is a symlink belonging to openssl@3. You can unlink it:
+  brew unlink openssl@3
+
+To force the link and overwrite all conflicting files:
+  brew link --overwrite openssl@1.1
+
+To list all files that would be deleted:
+  brew link --overwrite --dry-run openssl@1.1
+
+$ swift test -v -Xswiftc -I/opt/homebrew/Cellar/openssl@1.1/1.1.1t/include -Xlinker -L/opt/homebrew/Cellar/openssl@1.1/1.1.1t/lib -Xlinker -lcrypto -Xlinker -lssl
+
+
+module.modulemap
+module CCrypsi [system] {
+    header "./Headers/CrypsiSwift-Bridging-Header.h"
+    link "ssl"
+    link "crypto"
+    export *
+}
