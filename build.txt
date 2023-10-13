@@ -18,7 +18,11 @@ To force the link and overwrite all conflicting files:
 To list all files that would be deleted:
   brew link --overwrite --dry-run openssl@1.1
 
+### Test run OSX
 $ swift test -v -Xswiftc -I/opt/homebrew/Cellar/openssl@1.1/1.1.1t/include -Xlinker -L/opt/homebrew/Cellar/openssl@1.1/1.1.1t/lib -Xlinker -lcrypto -Xlinker -lssl
+
+### Test run Linux
+$ swift test -v -Xswiftc -I/usr/include/openssl/ -Xlinker -lcrypto -Xlinker -lssl
 
 
 module.modulemap
