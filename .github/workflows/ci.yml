@@ -24,10 +24,10 @@ jobs:
         run: |
           mkdir -p ~/code/build-from-src/ && cd $_
 
-          curl -LO https://www.openssl.org/source/openssl-1.1.1f.tar.gz
+          curl -LO https://www.openssl.org/source/openssl-1.1.1p.tar.gz
 
-          tar -xzvf openssl-1.1.1f.tar.gz
-          cd openssl-1.1.1f
+          tar -xzvf openssl-1.1.1p.tar.gz
+          cd openssl-1.1.1p
 
           perl ./Configure --prefix=/usr/local --openssldir=/usr/local/openssl no-ssl3 no-ssl3-method no-zlib darwin64-x86_64-cc enable-ec_nistp_64_gcc_128
           make
@@ -40,8 +40,8 @@ jobs:
           make clean
           make distclean
           cd ..
-          rm -fr openssl-1.1.1f
-          rm openssl-1.1.1f.tar.gz
+          rm -fr openssl-1.1.1p
+          rm openssl-1.1.1p.tar.gz
       - name: Build
         run: swift build -v
       - name: Run tests
