@@ -46,6 +46,10 @@ jobs:
         run: |
           which openssl
           ls /usr/local/openssl
+          ls /usr/local/openssl/share
+          ls /usr/local/opt
+          ls /usr/local/lib
+          ls /usr/local/include
           openssl version -a
       - name: Build
         run: swift build -v -Xswiftc -I/usr/local/openssl/include -Xlinker -L/usr/local/openssl/lib
