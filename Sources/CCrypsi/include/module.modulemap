@@ -1,0 +1,6 @@
+module CCrypsi [system] {
+    header "crypsi.h"
+    link "ssl"
+    link "crypto"
+    export *
+}
