@@ -14,12 +14,12 @@ jobs:
 
     strategy:
       fail-fast: false
-      
+
     steps: 
       - uses: actions/checkout@v4
       - uses: swift-actions/setup-swift@65540b95f51493d65f5e59e97dcef9629ddf11bf
         with:
-          swift-version: "5.3.3"
+          swift-version: "5.7"
       - name: Build
         run: swift build -v
       - name: Run tests
@@ -36,7 +36,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: swift-actions/setup-swift@65540b95f51493d65f5e59e97dcef9629ddf11bf
         with:
-          swift-version: "5.3.3"
+          swift-version: "5.7"
       - name: Set permission to install_ubuntu_deps
         run: chmod +x ./scripts/install_ubuntu_deps
       - name: Install Ubuntu dependecies
