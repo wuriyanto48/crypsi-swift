@@ -42,14 +42,26 @@ jobs:
           cd ..
           rm -fr openssl-1.1.1p
           rm openssl-1.1.1p.tar.gz
-      - name: Check Builder
+      - name: Check Builder 1
         run: |
           which openssl
+      - name: Check Builder 2
+        run: |
           ls /usr/local/openssl
+      - name: Check Builder 3
+        run: |
           ls /usr/local/openssl/share
+      - name: Check Builder 4
+        run: |
           ls /usr/local/opt
+      - name: Check Builder 5
+        run: |
           ls /usr/local/lib
+      - name: Check Builder 6
+        run: |
           ls /usr/local/include
+      - name: Check Builder 7
+        run: |
           openssl version -a
       - name: Build
         run: swift build -v -Xswiftc -I/usr/local/openssl/include -Xlinker -L/usr/local/openssl/lib
