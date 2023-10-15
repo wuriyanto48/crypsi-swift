@@ -46,9 +46,9 @@ jobs:
         run: |
           openssl version -a
       - name: Build
-        run: swift build -v -Xswiftc -I/usr/local/opt/openssl@1.1/include -Xlinker -L/usr/local/opt/openssl@1.1/lib
+        run: swift build -v -Xswiftc -I/usr/local/opt/openssl@1.1/include -Xlinker -L/usr/local/opt/openssl@1.1/lib -Xfrontend -validate-tbd-against-ir=none
       - name: Run tests
-        run: swift test -v -Xswiftc -I/usr/local/opt/openssl@1.1/include -Xlinker -L/usr/local/opt/openssl@1.1/lib
+        run: swift test -v -Xswiftc -I/usr/local/opt/openssl@1.1/include -Xlinker -L/usr/local/opt/openssl@1.1/lib -Xfrontend -validate-tbd-against-ir=none
   
   ubuntu20:
 
