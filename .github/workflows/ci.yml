@@ -50,7 +50,7 @@ jobs:
           ls /usr/local/opt/openssl\@1.1
       - name: Check Builder 1
         run: |
-          ls /usr/local/opt/openssl\@1.1/1.1.1p
+          ls /usr/local/opt/openssl\@1.1/lib
       - name: Check Builder 2
         run: |
           ls /usr/local/include/openssl
@@ -58,9 +58,9 @@ jobs:
         run: |
           openssl version -a
       - name: Build
-        run: swift build -v -Xswiftc -I/usr/local/include/openssl -Xlinker -L/usr/local/lib/openssl@1.1/1.1.1p/lib
+        run: swift build -v -Xswiftc -I/usr/local/opt/openssl@1.1/include -Xlinker -L/usr/local/opt/openssl@1.1/lib
       - name: Run tests
-        run: swift test -v -Xswiftc -I/usr/local/include/openssl -Xlinker -L/usr/local/lib/openssl@1.1/1.1.1p/lib
+        run: swift test -v -Xswiftc -I/usr/local/opt/openssl@1.1/include -Xlinker -L/usr/local/opt/openssl@1.1/lib
   
   ubuntu20:
 
