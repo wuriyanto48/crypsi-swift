@@ -13,6 +13,9 @@ let package = Package(
         .target(name: "CrypsiSwift", 
             dependencies: [
                 .target(name: "CCrypsi")
+            ],
+            swiftSettings: [
+                .unsafeFlags(["-Xfrontend", "-validate-tbd-against-ir=none"])
             ]),
         .testTarget(
             name: "CrypsiSwiftTests",
