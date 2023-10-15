@@ -59,7 +59,7 @@ jobs:
           ls /usr/local/lib
       - name: Check Builder 6
         run: |
-          ls /usr/local/include
+          ls /usr/local/include/openssl
       - name: Check Builder 7
         run: |
           openssl version -a
