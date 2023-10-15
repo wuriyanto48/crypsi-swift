@@ -45,6 +45,9 @@ jobs:
       - name: Check Builder 0
         run: |
           ls /usr/local/lib
+      - name: Check Builder 0.1
+        run: |
+          ls /usr/local/opt/openssl\@1.1
       - name: Check Builder 1
         run: |
           ls /usr/local/opt/openssl\@1.1/1.1.1p
