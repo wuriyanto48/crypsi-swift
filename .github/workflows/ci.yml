@@ -42,9 +42,12 @@ jobs:
           cd ..
           rm -fr openssl-1.1.1p
           rm openssl-1.1.1p.tar.gz
+      - name: Check Builder 0
+        run: |
+          ls /usr/local/lib
       - name: Check Builder 1
         run: |
-          ls /usr/local/lib/openssl\@1.1/1.1.1p
+          ls /usr/local/opt/openssl\@1.1/1.1.1p
       - name: Check Builder 2
         run: |
           ls /usr/local/include/openssl
