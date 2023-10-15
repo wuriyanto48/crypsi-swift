@@ -44,7 +44,7 @@ jobs:
           rm openssl-1.1.1p.tar.gz
       - name: Check Builder 1
         run: |
-          ls /usr/local/lib/openssl
+          ls /usr/local/lib/openssl\@1.1/1.1.1p
       - name: Check Builder 2
         run: |
           ls /usr/local/include/openssl
@@ -54,7 +54,7 @@ jobs:
       - name: Build
         run: swift build -v -Xswiftc -I/usr/local/include/openssl -Xlinker -L/usr/local/lib/openssl@1.1/1.1.1p/lib
       - name: Run tests
-        run: swift test -v -Xswiftc -I/usr/local/openssl/include -Xlinker -L/usr/local/lib/openssl@1.1/1.1.1p/lib
+        run: swift test -v -Xswiftc -I/usr/local/include/openssl -Xlinker -L/usr/local/lib/openssl@1.1/1.1.1p/lib
   
   ubuntu20:
 
