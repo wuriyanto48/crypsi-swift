@@ -17,7 +17,7 @@ jobs:
 
     steps: 
       - uses: actions/checkout@v4
-      - uses: swift-actions/setup-swift@65540b95f51493d65f5e59e97dcef9629ddf11bf
+      - uses: swift-actions/setup-swift@v1
         with:
           swift-version: "5.7"
       - name: install openssl
@@ -42,19 +42,7 @@ jobs:
           cd ..
           rm -fr openssl-1.1.1p
           rm openssl-1.1.1p.tar.gz
-      - name: Check Builder 0
-        run: |
-          ls /usr/local/lib
-      - name: Check Builder 0.1
-        run: |
-          ls /usr/local/opt/openssl\@1.1
-      - name: Check Builder 1
-        run: |
-          ls /usr/local/opt/openssl\@1.1/lib
-      - name: Check Builder 2
-        run: |
-          ls /usr/local/include/openssl
-      - name: Check Builder 3
+      - name: Check Builder
         run: |
           openssl version -a
       - name: Build
